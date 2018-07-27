@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Handlebarsjs sample</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+
+</head>
+
+<body>
+
+  <section id="content" style="width: 100%; text-align: center;">
+    <form action="GET" target="">
+      <div id="radio"></div>
+      <div id="select"></div>
+    </form>
+  </section>
+
+  <style>
+    fieldset {
+      max-width: 400px;
+      min-width: 200px;
+    }
+  </style>
+
+  <script id="radio-template" type="text/x-handlebars-template">
+    <fieldset>
+      <legend>{{legend}}</legend>
+      {{#inputs}}
+        <input type="radio" name="{{../name}}" id="{{id}}" value="{{value}}">
+        <label for="{{id}}">{{label}}</label>
+      {{/inputs}}
+    </fieldset>
+  </script>
+
+  <script>
+    var source = document.getElementById("radio-template").innerHTML;
+    var template = Handlebars.compile(source);
+    var context = {
+      legend: "性別",
+      name: "sex",
+      inputs: [
+        { label: "男性", id: "male", value: "m" },
+        { label: "女性", id: "female", value: "f" },
+      ]
+    };
+    var html = template(context);
+    document.getElementById('radio').innerHTML = html;
+  </script>
+
+  <script id="selectbox-template" type="text/x-handlebars-template">
+    <fieldset>
+      <legend>{{legend}}</legend>
+      <select name="{{name}}" id="{{id}}">
+        <option selected value="">{{placeholder}}</option>
+        {{#options}}
+          <option value="{{value}}">{{name}}</option>
+        {{/options}}
+      </select>
+    </fieldset>
+  </script>
+
+  <script>
+    var source = document.getElementById("selectbox-template").innerHTML;
+    var template = Handlebars.compile(source);
+    var context = {
+      legend: "年齢",
+      name: "age",
+      id: "age",
+      placeholder: "選択してください...",
+      options: [
+        { value: "1", name: "19歳以下" },
+        { value: "2", name: "20〜39歳以下" },
+        { value: "3", name: "40〜59歳以上" },
+        { value: "4", name: "60〜79歳以下" },
+        { value: "5", name: "80歳以上" },
+      ]
+    };
+    var html = template(context);
+    document.getElementById('select').innerHTML = html;
+  </script>
+
+</body>
+
+</html>

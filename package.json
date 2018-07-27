@@ -1,0 +1,28 @@
+{
+  "name": "handlebar-js-sample",
+  "version": "1.0.0",
+  "description": "How to use handlebar.js.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichEam/handlebar-js-sample.git"
+  },
+  "keywords": [
+    "js",
+    "html",
+    "handlebars"
+  ],
+  "author": "maedathemegane@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichEam/handlebar-js-sample/issues"
+  },
+  "homepage": "https://github.com/MichEam/handlebar-js-sample#readme",
+  "dependencies": {
+    "handlebars": "^4.0.11",
+    "jquery": "^3.3.1"
+  }
+}
