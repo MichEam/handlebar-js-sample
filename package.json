@@ -23,6 +23,6 @@
   "homepage": "https://github.com/MichEam/handlebar-js-sample#readme",
   "dependencies": {
     "handlebars": "^4.7.7",
-    "jquery": "^3.3.1"
+    "jquery": "^3.5.0"
   }
 }
